@@ -110,7 +110,10 @@ const callback = (entries, observer) => {
         }
         if (entry.target.id === "timetracking") {
             if (entry.isIntersecting) {
-                
+                const timeOutput = entry.target.querySelector(".time__output");
+                if (timeOutput) {
+                    timeOutput.dataset.timestamp = 1;
+                }
             }
         }
     })
