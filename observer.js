@@ -112,8 +112,6 @@ const callback = (entries, observer) => {
         if (entry.target.id === "timetracking") {
 
             if (entry.isIntersecting) {
-
-                
                 let startTime = 0;
                 let actTime;
                 
@@ -124,7 +122,12 @@ const callback = (entries, observer) => {
                     actTime = Date.now();
     
                     if (actTime) {
-                        timeOutput.dataset.timestamp = actTime;
+                        if (!timeOutput.dataset.timestamp) {
+                            timeOutput.dataset.timestamp = startTime;
+                        } else {
+                            startTime = timeOutput.dataset.timestamp;
+                        }
+                        timeOutput.innerHTML = ((actTime - startTime) / 1000).toFixed(0) + "s";
                     }
                 }
 
