@@ -1,0 +1,268 @@
+@import url(defaultVariables.css);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--global-font);
+    .entry {
+        position: relative;
+        box-sizing: border-box;
+        height: 80vh;
+        width: 100%;
+        padding: 16px;
+        &.dark__bg {
+            background-color: var(--darkbg);
+            color: var(--lightfont);
+        }
+        &.mid__bg {
+            background-color: var(--midbg);
+            color: var(--lightfont);
+        }
+        &.light__bg {
+            background-color: var(--lightbg);
+            color: var(--darkbg);
+        }
+        &.teaser {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            & h1 {
+                font-size: 4rem;
+                font-weight: 100;
+            }
+        }
+        .intersection__data {
+            position: absolute;
+            inset: 16px 16px 16px auto;
+            .intersection__ratio {
+                display: block;
+                top: 16px;
+                position: sticky;
+            }
+        }
+        .intersection__ratio {
+            display: block;
+            top: 16px;
+            position: sticky;
+        }
+        .animation__box {
+            position: relative;
+            opacity: 0;
+            height: 50px;
+            width: 200px;
+            margin-inline: auto;
+            top: 40%;
+            background-color: var(--pure-white);
+            transition: all 0.5s ease;
+            translate: 0 200px;
+            border-radius: var(--std-border-radius);
+            scale: 2;
+            &::after {
+                position: absolute;
+                display: block;
+                top: 0px;
+                left: -20px;
+                content: "";
+                height: 10px;
+                width: 10px;
+                background-color: var(--pure-white);
+                border-radius: 100%;
+                opacity: 0;
+            }
+            &::before {
+                position: absolute;
+                display: block;
+                top: -30px;
+                left: 0px;
+                content: "";
+                height: 20px;
+                width: 20px;
+                background-color: var(--pure-white);
+                border-radius: 100%;
+                opacity: 0;
+            }
+            & img {
+                max-width: 80%;
+                opacity: 0;
+                transition: all 0.5s ease;
+                translate: 200%;
+                margin-left: 10%;
+                margin-top: 10px;
+            }
+        }
+        &.run__animation {
+            .animation__box {
+                opacity: 1;
+                translate: 0px;
+                border-radius: var(--std-border-radius);
+                height: 50px;
+                &::after {
+                    opacity: 1;
+                    transition: all 0.3s ease 1s;
+                }
+                &::before {
+                    opacity: 1;
+                    transition: all 0.3s ease 1.3s;
+                }
+                & img {
+                    opacity: 1;
+                    translate: 0;
+                    transition: all 0.5s ease 0.5s;
+                }
+            }
+        }
+        .lazy__image {
+            position: relative;
+            height: 200px;
+            width: 600px;
+            display: block;
+            margin-inline: auto;
+            top: 30%;
+            border-radius: var(--std-border-radius);
+            border: 1px solid var(--success);
+        }
+        .visible__ad {
+            position: relative;
+            color: var(--error);
+            text-align: center;
+            font-size: 3rem;
+            top: 30%;
+            font-weight: 700;
+            &.visible {
+                color: var(--success-dark);
+            }
+        }
+        .text__content {
+            position: relative;
+            top: 10%;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+        }
+        .text__controls {
+            & button {
+                display: block;
+                padding: 16px;
+                margin-block: 16px;
+            }
+            & label {
+                opacity: 0.5;
+            }
+        }
+        .rounded__corners {
+            background-color: var(--pure-white);
+            border-radius: var(--std-border-radius);
+            padding: 0 16px;
+            margin-top: 10%;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+        }
+        .scroll__container {
+            height: 30vh;
+            background-color: var(--pure-white);
+            overflow-y: scroll;
+            border-radius: var(--std-border-radius);
+            .scroll__container--box {
+                position: relative;
+                isolation: isolate;
+                min-height: 10vh;
+                background: var(--lightbg);
+                color: var(--darkbg);
+                border-radius: var(--std-border-radius);
+                padding: 32px;
+                margin: 16px;
+                & h3, & p {
+                    max-width: calc(100% - 120px);
+                }
+                & img {
+                    position: absolute;
+                    top: 32px;
+                    right: 32px;
+                    border-radius: calc(var(--std-border-radius) / 4);
+                }
+                & p {
+                    clear: both;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 16px;
+                    background-color: transparent;
+                    border-radius: calc(var(--std-border-radius) / 2);
+                    border: 1px dashed var(--pure-white);
+                    z-index: -1;
+                }
+            }
+        }
+        .video__content {
+            position: relative;
+            top: 10%;
+            border-radius: var(--std-border-radius);
+            overflow: hidden;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+        }
+        .direction__display {
+            position: relative;
+            top: 30%;
+            overflow: hidden;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 100;
+            text-transform: uppercase;
+            .direction__output {
+                &::after {
+                    content: "\2193";
+                    display: inline-block;
+                    transition: rotate 0.5s ease;
+                    margin-left: 1ch;
+                }
+                &::before {
+                    content: "\2193";
+                    display: inline-block;
+                    transition: rotate 0.5s ease;
+                    margin-right: 1ch;
+                }
+                &.up {
+                    &::after {
+                        rotate: -180deg;
+                    }
+                    &::before {
+                        rotate: 180deg;
+                    }
+                }
+            }
+        }
+        .color__display {
+            position: relative;
+            top: 30%;
+            height: 200px;
+            border-radius: var(--std-border-radius);
+            overflow: hidden;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+            background-color: var(--success);
+            transition: background-color 0.3s ease;
+        }
+        .calculations__output {
+            padding: 16px;
+            position: relative;
+            top: 20%;
+            border-radius: var(--std-border-radius);
+            overflow: hidden;
+            width: 600px;
+            max-width: 90%;
+            margin-inline: auto;
+            background-color: var(--darkbg);
+            color: var(--lightfont);
+            transition: background-color 0.3s ease;
+        }
+    }
+}

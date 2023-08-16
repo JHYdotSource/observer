@@ -1,0 +1,16 @@
+:root {
+    --success: #57F4A3;
+    --success-dark: #40B074;
+    --error: #FF5A5F;
+    --error-dark: #f45757;
+    --darkbg: #283044;
+    --midbg: #78A1BB;
+    --lightbg: #F2DFD7;
+    --lightfont: #F5F5F5;
+    --pure-white: #FFFFFF;
+
+    --global-font: Roboto, Arial, Helvetica, Sans-serif;
+    --std-border-radius: 16px;
+    --std-margin: 16px;
+    --std-padding: 16px;
+}

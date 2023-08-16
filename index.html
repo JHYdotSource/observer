@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="entry teaser">
+        <h1>Intersection Observer</h1>
+    </div>
+    <div id="animation" class="entry dark__bg">
+        <h2>Animation</h2>
+        <div class="animation__box">
+            <img src="/media/dS_logo_rgb_1068_180.png" alt="dS Logo">
+        </div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="lazyloading" class="entry mid__bg">
+        <h2>Lazy Loading</h2>
+        <img class="lazy__image" src data-src="https://picsum.photos/600/200" alt="Lazy Image">
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="adtracking" class="entry light__bg">
+        <h2>Ad-Tracking</h2>
+        <div class="visible__ad">Not visible (x)</div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="textreading" class="entry dark__bg">
+        <h2>Text read completion</h2>
+        <div class="text__content">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Culpa odit, provident asperiores sunt porro voluptatem magnam quasi consectetur sit. 
+                Fuga alias deleniti velit neque omnis, voluptas ex. 
+                Beatae fugiat hic voluptas assumenda ad illum a. 
+                Ut in rem cumque alias perferendis reprehenderit dolorem temporibus numquam, quam exercitationem ad. 
+                Repellendus vel molestiae sed, totam laboriosam ut reiciendis quasi iste temporibus dolore 
+                deleniti aperiam in iure unde corrupti libero aspernatur earum possimus quisquam ipsa quos ducimus quaerat? 
+                Modi dolorem quod totam quo adipisci praesentium mollitia quis amet. 
+                Veritatis cupiditate eius ratione soluta, 
+                molestias blanditiis dolorum voluptas dolor voluptatibus a, accusantium autem maxime.</p>
+            <div class="text__controls">
+                <input id="text__checkbox" type="checkbox" disabled> 
+                <label for="text__checkbox">I have read the Lorem Ipsum and understood everything</label>
+                <button disabled>Continue</button>
+            </div>
+        </div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="infinitescrolling" class="entry mid__bg">
+        <h2>Infinite Scrolling</h2>
+        <div class="rounded__corners">
+            <div class="scroll__container">
+                <div class="scroll__container--list">
+                    <div class="scroll__container--box">
+                        <h3>Content</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Sapiente quo adipisci quasi exercitationem quia quas omnis laboriosam inventore dignissimos beatae.</p>
+                        <img src="https://picsum.photos/100?random=1" alt="Lazy Image">
+                    </div>
+                    <div class="scroll__container--box">
+                        <h3>Content</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Sapiente quo adipisci quasi exercitationem quia quas omnis laboriosam inventore dignissimos beatae.</p>
+                        <img src="https://picsum.photos/100?random=2" alt="Lazy Image">
+                    </div>
+                    <div class="scroll__container--box">
+                        <h3>Content</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Sapiente quo adipisci quasi exercitationem quia quas omnis laboriosam inventore dignissimos beatae.</p>
+                        <img src="https://picsum.photos/100?random=3" alt="Lazy Image">
+                    </div>
+                </div>
+                <div class="scroll__container--box__loader">Loading...</div>
+            </div>
+        </div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="videocontrols" class="entry light__bg">
+        <h2>Video controls</h2>
+        <div class="video__content">
+            <video src="media/Big_Buck_Bunny_360_10s_1MB.mp4" muted loop></video>
+        </div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="scrolldetection" class="entry dark__bg">
+        <h2>Scroll direction detection</h2>
+        <div class="direction__display"><div class="direction__output">scrolling down</div></div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="colorchange" class="entry mid__bg">
+        <h2>Color changes</h2>
+        <div class="color__display"></div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="calculations" class="entry light__bg">
+        <h2>Calculations</h2>
+        <div class="calculations__output"></div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+    <div id="timetracking" class="entry dark__bg">
+        <h2>Time tracking</h2>
+        <div class="time__output">0s</div>
+        <div class="intersection__data">
+            <span class="intersection__ratio">0</span>
+        </div>
+    </div>
+
+    <script src="observer.js"></script>
+</body>
+</html>
