@@ -1,4 +1,5 @@
 let previousY = 0;
+let interval;
 
 const callback = (entries, observer) => {
     entries.forEach((entry) => {
@@ -109,11 +110,31 @@ const callback = (entries, observer) => {
             }
         }
         if (entry.target.id === "timetracking") {
+
             if (entry.isIntersecting) {
-                const timeOutput = entry.target.querySelector(".time__output");
-                if (timeOutput) {
-                    timeOutput.dataset.timestamp = 1;
+
+                
+                let startTime = 0;
+                let actTime;
+                
+                const handleInterval = () => {
+                    if (startTime === 0) {
+                        startTime = Date.now();
+                    }
+                    actTime = Date.now();
+    
+                    if (actTime) {
+                        timeOutput.dataset.timestamp = actTime;
+                    }
                 }
+
+                const timeOutput = entry.target.querySelector(".time__output");
+                if (timeOutput && !interval) {
+                    interval = setInterval(handleInterval, 1000);
+                }
+            } else {
+                clearInterval(interval);
+                interval = null;
             }
         }
     })
