@@ -140,7 +140,7 @@ const callback = (entries, observer) => {
 
 const buildThresholdList = () => {
     let thresholds = [];
-    let numSteps = 25;
+    let numSteps = 30;
    
     for (let i = 1.0; i <= numSteps; i++) {
       let ratio = i / numSteps;
