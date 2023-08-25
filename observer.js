@@ -1,5 +1,14 @@
 let previousY = 0;
 let interval;
+let totalViewTime = 0;
+
+function drawAdTimer(seconds) {
+    const totalSeconds = seconds / 1000;
+    const sec = Math.floor(totalSeconds % 60);
+    const min = Math.floor(totalSeconds / 60);
+
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+}
 
 const callback = (entries, observer) => {
     entries.forEach((entry) => {
@@ -111,24 +120,10 @@ const callback = (entries, observer) => {
         }
         if (entry.target.id === "timetracking") {
 
-            if (entry.isIntersecting) {
-                let startTime = 0;
-                let actTime;
-                
+            if (entry.isIntersecting && entry.intersectionRatio > 0.75) {
                 const handleInterval = () => {
-                    if (startTime === 0) {
-                        startTime = Date.now();
-                    }
-                    actTime = Date.now();
-    
-                    if (actTime) {
-                        if (!timeOutput.dataset.timestamp) {
-                            timeOutput.dataset.timestamp = startTime;
-                        } else {
-                            startTime = timeOutput.dataset.timestamp;
-                        }
-                        timeOutput.innerHTML = ((actTime - startTime) / 1000).toFixed(0) + "s";
-                    }
+                    totalViewTime +=  1000;
+                    timeOutput.innerHTML = drawAdTimer(totalViewTime);
                 }
 
                 const timeOutput = entry.target.querySelector(".time__output");

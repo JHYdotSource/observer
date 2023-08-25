@@ -264,5 +264,15 @@ body {
             color: var(--lightfont);
             transition: background-color 0.3s ease;
         }
+        .time__output {
+            text-align: center;
+            font-size: 5rem;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.3rem;
+            font-weight: 300;
+        }
     }
 }
